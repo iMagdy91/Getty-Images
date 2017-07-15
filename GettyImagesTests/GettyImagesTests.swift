@@ -21,15 +21,36 @@ class GettyImagesTests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testAPIResponse() {
+        
+        let expectations: XCTestExpectation = expectation(description: "Testing GettyImages API")
+        
+        GIImageStore.getImagesInPage(page: 1, searchPhrase: nil, success: { (model) in
+          
+            let images: [GIImageViewModel]? = model as? [GIImageViewModel]
+            XCTAssertNotNil(images)
+            XCTAssert(images?.count == 10)
+            XCTAssertNotNil(images?.first?.imageTitle)
+            
+            expectations.fulfill()
+        }) { (error) in
+           
+            XCTFail("##ERROR happened: \(error)")
+            expectations.fulfill()
+        }
+        
+        waitForExpectations(timeout: 10.0) { error in
+            if let error = error {
+                XCTFail("waitForExpectationsWithTimeout errored: \(error)")
+            }
+        }
+
     }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+        self.measure {[weak self] in
+            self?.testAPIResponse()
         }
     }
     

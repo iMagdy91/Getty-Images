@@ -19,6 +19,7 @@ class GIMappingManager {
      */
     
     class func mapGettyImageToImageViewModel(gettyImage: GIGettyImage?) -> [GIImageViewModel] {
+        
         var imagesViewModel = [GIImageViewModel]()
         
         if let gettyImageModel = gettyImage, let images = gettyImageModel.images {
