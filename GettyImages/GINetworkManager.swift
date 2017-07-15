@@ -9,10 +9,10 @@
 import Foundation
 import Alamofire
 
-typealias NetworkSuccessClosure = (Any?) -> Void
-typealias NetworkErrorClosure = (Error) -> Void
+typealias NetworkSuccessClosure     = (Any?) -> Void
+typealias NetworkErrorClosure       = (Error) -> Void
 
-class NetworkManager {
+class GINetworkManager {
     
     /**
      Requests data from API and get the response back.
@@ -25,7 +25,12 @@ class NetworkManager {
      - Parameter failure: response failure block.
      */
     
-    class func performRequestWithPath(path: String?, requestMethod: Alamofire.HTTPMethod, parameters: [String : Any]?, headers: [String : String]?, success:@escaping NetworkSuccessClosure, failure:  @escaping NetworkErrorClosure) {
+    class func performRequestWithPath(path: String?,
+                                      requestMethod: Alamofire.HTTPMethod,
+                                      parameters: [String : Any]?,
+                                      headers: [String : String]?,
+                                      success:@escaping NetworkSuccessClosure,
+                                      failure:  @escaping NetworkErrorClosure) {
         
         let url = (path != nil) ? Network.baseURL + path! : Network.baseURL
         Alamofire.request(url, method: requestMethod, parameters: parameters, headers: headers)

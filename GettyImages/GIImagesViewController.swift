@@ -8,13 +8,12 @@
 
 import UIKit
 
-class ImagesViewController: BaseViewController {
+class GIImagesViewController: GIBaseViewController {
 
     
     // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
     }
 
 

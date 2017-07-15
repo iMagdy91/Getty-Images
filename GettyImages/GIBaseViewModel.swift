@@ -1,5 +1,5 @@
 //
-//  ImageStore.swift
+//  BaseViewModel.swift
 //  GettyImages
 //
 //  Created by Mohamed Magdy on 7/15/17.
@@ -8,8 +8,6 @@
 
 import Foundation
 
-class ImageStore: BaseStore {
-    
-    
+class GIBaseViewModel {
     
 }

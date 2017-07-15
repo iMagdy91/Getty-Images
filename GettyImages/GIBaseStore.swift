@@ -8,10 +8,10 @@
 
 import Foundation
 
-class BaseStore {
+class GIBaseStore {
     
-    typealias ErrorClosure = (Error) -> Void
-    typealias ViewModelClosure = ([BaseViewModel]?) -> Void
+    typealias ErrorClosure      = (Error) -> Void
+    typealias ViewModelClosure  = ([GIBaseViewModel]?) -> Void
 
     
 }
