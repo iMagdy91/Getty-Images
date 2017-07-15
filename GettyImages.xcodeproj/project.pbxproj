@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		31873994E2357C3360CE0F01 /* Pods_GettyImages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44821B875B790E5EC39EF886 /* Pods_GettyImages.framework */; };
 		79A3F1D71F1A2BBC0085B847 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F1D61F1A2BBC0085B847 /* AppDelegate.swift */; };
-		79A3F1D91F1A2BBC0085B847 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F1D81F1A2BBC0085B847 /* ViewController.swift */; };
 		79A3F1DC1F1A2BBC0085B847 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79A3F1DA1F1A2BBC0085B847 /* Main.storyboard */; };
 		79A3F1DE1F1A2BBC0085B847 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79A3F1DD1F1A2BBC0085B847 /* Assets.xcassets */; };
 		79A3F1E11F1A2BBC0085B847 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79A3F1DF1F1A2BBC0085B847 /* LaunchScreen.storyboard */; };
@@ -34,9 +34,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		44821B875B790E5EC39EF886 /* Pods_GettyImages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GettyImages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4D8DDBF1B370637095F2DD7D /* Pods-GettyImages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GettyImages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GettyImages/Pods-GettyImages.debug.xcconfig"; sourceTree = "<group>"; };
 		79A3F1D31F1A2BBC0085B847 /* GettyImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GettyImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A3F1D61F1A2BBC0085B847 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		79A3F1D81F1A2BBC0085B847 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		79A3F1DB1F1A2BBC0085B847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		79A3F1DD1F1A2BBC0085B847 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		79A3F1E01F1A2BBC0085B847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		79A3F1F21F1A2BBC0085B847 /* GettyImagesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GettyImagesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A3F1F61F1A2BBC0085B847 /* GettyImagesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettyImagesUITests.swift; sourceTree = "<group>"; };
 		79A3F1F81F1A2BBC0085B847 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8638B210DB19F04114A42098 /* Pods-GettyImages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GettyImages.release.xcconfig"; path = "Pods/Target Support Files/Pods-GettyImages/Pods-GettyImages.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				31873994E2357C3360CE0F01 /* Pods_GettyImages.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,8 @@
 				79A3F1EA1F1A2BBC0085B847 /* GettyImagesTests */,
 				79A3F1F51F1A2BBC0085B847 /* GettyImagesUITests */,
 				79A3F1D41F1A2BBC0085B847 /* Products */,
+				E07375E0AC3D9B1489825874 /* Pods */,
+				C7C3F889EF212532D33CA040 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -97,12 +102,8 @@
 		79A3F1D51F1A2BBC0085B847 /* GettyImages */ = {
 			isa = PBXGroup;
 			children = (
-				79A3F1D61F1A2BBC0085B847 /* AppDelegate.swift */,
-				79A3F1D81F1A2BBC0085B847 /* ViewController.swift */,
-				79A3F1DA1F1A2BBC0085B847 /* Main.storyboard */,
-				79A3F1DD1F1A2BBC0085B847 /* Assets.xcassets */,
-				79A3F1DF1F1A2BBC0085B847 /* LaunchScreen.storyboard */,
-				79A3F1E21F1A2BBC0085B847 /* Info.plist */,
+				79A3F2051F1A358E0085B847 /* View */,
+				79A3F2041F1A35740085B847 /* Supporting Files */,
 			);
 			path = GettyImages;
 			sourceTree = "<group>";
@@ -125,6 +126,50 @@
 			path = GettyImagesUITests;
 			sourceTree = "<group>";
 		};
+		79A3F2041F1A35740085B847 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				79A3F1D61F1A2BBC0085B847 /* AppDelegate.swift */,
+				79A3F1DD1F1A2BBC0085B847 /* Assets.xcassets */,
+				79A3F1DF1F1A2BBC0085B847 /* LaunchScreen.storyboard */,
+				79A3F1E21F1A2BBC0085B847 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		79A3F2051F1A358E0085B847 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				79A3F2061F1A35920085B847 /* Storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		79A3F2061F1A35920085B847 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				79A3F1DA1F1A2BBC0085B847 /* Main.storyboard */,
+			);
+			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		C7C3F889EF212532D33CA040 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				44821B875B790E5EC39EF886 /* Pods_GettyImages.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E07375E0AC3D9B1489825874 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4D8DDBF1B370637095F2DD7D /* Pods-GettyImages.debug.xcconfig */,
+				8638B210DB19F04114A42098 /* Pods-GettyImages.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +177,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 79A3F1FB1F1A2BBC0085B847 /* Build configuration list for PBXNativeTarget "GettyImages" */;
 			buildPhases = (
+				76774EA4865245A13A67D0C7 /* [CP] Check Pods Manifest.lock */,
 				79A3F1CF1F1A2BBC0085B847 /* Sources */,
 				79A3F1D01F1A2BBC0085B847 /* Frameworks */,
 				79A3F1D11F1A2BBC0085B847 /* Resources */,
+				41C6DF2E45748D36407316B4 /* [CP] Embed Pods Frameworks */,
+				8B24242B0FF8D8D8A468B355 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -257,12 +305,59 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		41C6DF2E45748D36407316B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GettyImages/Pods-GettyImages-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		76774EA4865245A13A67D0C7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		8B24242B0FF8D8D8A468B355 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-GettyImages/Pods-GettyImages-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		79A3F1CF1F1A2BBC0085B847 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				79A3F1D91F1A2BBC0085B847 /* ViewController.swift in Sources */,
 				79A3F1D71F1A2BBC0085B847 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +510,7 @@
 		};
 		79A3F1FC1F1A2BBC0085B847 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4D8DDBF1B370637095F2DD7D /* Pods-GettyImages.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RBZ2UQ2323;
@@ -428,6 +524,7 @@
 		};
 		79A3F1FD1F1A2BBC0085B847 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8638B210DB19F04114A42098 /* Pods-GettyImages.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RBZ2UQ2323;
