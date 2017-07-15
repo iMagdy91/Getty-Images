@@ -14,6 +14,15 @@
 		79A3F1E11F1A2BBC0085B847 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79A3F1DF1F1A2BBC0085B847 /* LaunchScreen.storyboard */; };
 		79A3F1EC1F1A2BBC0085B847 /* GettyImagesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F1EB1F1A2BBC0085B847 /* GettyImagesTests.swift */; };
 		79A3F1F71F1A2BBC0085B847 /* GettyImagesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F1F61F1A2BBC0085B847 /* GettyImagesUITests.swift */; };
+		79A3F2091F1A37070085B847 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F2081F1A37070085B847 /* NetworkManager.swift */; };
+		79A3F20C1F1A39850085B847 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F20B1F1A39850085B847 /* Constants.swift */; };
+		79A3F20F1F1A40D90085B847 /* BaseStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F20E1F1A40D90085B847 /* BaseStore.swift */; };
+		79A3F2141F1A419D0085B847 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F2131F1A419D0085B847 /* BaseViewModel.swift */; };
+		79A3F2161F1A49950085B847 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F2151F1A49950085B847 /* Image.swift */; };
+		79A3F2181F1A49D40085B847 /* GettyImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F2171F1A49D40085B847 /* GettyImage.swift */; };
+		79A3F21A1F1A4AA80085B847 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F2191F1A4AA80085B847 /* ImageStore.swift */; };
+		79A3F21D1F1A4ADA0085B847 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F21C1F1A4ADA0085B847 /* BaseViewController.swift */; };
+		79A3F21F1F1A4B070085B847 /* ImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F21E1F1A4B070085B847 /* ImagesViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +57,15 @@
 		79A3F1F21F1A2BBC0085B847 /* GettyImagesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GettyImagesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A3F1F61F1A2BBC0085B847 /* GettyImagesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettyImagesUITests.swift; sourceTree = "<group>"; };
 		79A3F1F81F1A2BBC0085B847 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		79A3F2081F1A37070085B847 /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		79A3F20B1F1A39850085B847 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		79A3F20E1F1A40D90085B847 /* BaseStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseStore.swift; sourceTree = "<group>"; };
+		79A3F2131F1A419D0085B847 /* BaseViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		79A3F2151F1A49950085B847 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		79A3F2171F1A49D40085B847 /* GettyImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GettyImage.swift; sourceTree = "<group>"; };
+		79A3F2191F1A4AA80085B847 /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
+		79A3F21C1F1A4ADA0085B847 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		79A3F21E1F1A4B070085B847 /* ImagesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagesViewController.swift; sourceTree = "<group>"; };
 		8638B210DB19F04114A42098 /* Pods-GettyImages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GettyImages.release.xcconfig"; path = "Pods/Target Support Files/Pods-GettyImages/Pods-GettyImages.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -102,6 +120,11 @@
 		79A3F1D51F1A2BBC0085B847 /* GettyImages */ = {
 			isa = PBXGroup;
 			children = (
+				79A3F21B1F1A4AC70085B847 /* Controller */,
+				79A3F2101F1A41850085B847 /* Model */,
+				79A3F20D1F1A40CE0085B847 /* Store */,
+				79A3F20A1F1A396D0085B847 /* Utils */,
+				79A3F2071F1A36F10085B847 /* Network */,
 				79A3F2051F1A358E0085B847 /* View */,
 				79A3F2041F1A35740085B847 /* Supporting Files */,
 			);
@@ -151,6 +174,66 @@
 				79A3F1DA1F1A2BBC0085B847 /* Main.storyboard */,
 			);
 			name = Storyboard;
+			sourceTree = "<group>";
+		};
+		79A3F2071F1A36F10085B847 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				79A3F2081F1A37070085B847 /* NetworkManager.swift */,
+			);
+			name = Network;
+			sourceTree = "<group>";
+		};
+		79A3F20A1F1A396D0085B847 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				79A3F20B1F1A39850085B847 /* Constants.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		79A3F20D1F1A40CE0085B847 /* Store */ = {
+			isa = PBXGroup;
+			children = (
+				79A3F20E1F1A40D90085B847 /* BaseStore.swift */,
+				79A3F2191F1A4AA80085B847 /* ImageStore.swift */,
+			);
+			name = Store;
+			sourceTree = "<group>";
+		};
+		79A3F2101F1A41850085B847 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				79A3F2121F1A418F0085B847 /* View Model */,
+				79A3F2111F1A418A0085B847 /* DTO */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		79A3F2111F1A418A0085B847 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				79A3F2171F1A49D40085B847 /* GettyImage.swift */,
+			);
+			name = DTO;
+			sourceTree = "<group>";
+		};
+		79A3F2121F1A418F0085B847 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				79A3F2131F1A419D0085B847 /* BaseViewModel.swift */,
+				79A3F2151F1A49950085B847 /* Image.swift */,
+			);
+			name = "View Model";
+			sourceTree = "<group>";
+		};
+		79A3F21B1F1A4AC70085B847 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				79A3F21C1F1A4ADA0085B847 /* BaseViewController.swift */,
+				79A3F21E1F1A4B070085B847 /* ImagesViewController.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 		C7C3F889EF212532D33CA040 /* Frameworks */ = {
@@ -358,7 +441,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				79A3F21F1F1A4B070085B847 /* ImagesViewController.swift in Sources */,
+				79A3F2181F1A49D40085B847 /* GettyImage.swift in Sources */,
+				79A3F2091F1A37070085B847 /* NetworkManager.swift in Sources */,
+				79A3F2161F1A49950085B847 /* Image.swift in Sources */,
+				79A3F21A1F1A4AA80085B847 /* ImageStore.swift in Sources */,
+				79A3F2141F1A419D0085B847 /* BaseViewModel.swift in Sources */,
+				79A3F21D1F1A4ADA0085B847 /* BaseViewController.swift in Sources */,
 				79A3F1D71F1A2BBC0085B847 /* AppDelegate.swift in Sources */,
+				79A3F20F1F1A40D90085B847 /* BaseStore.swift in Sources */,
+				79A3F20C1F1A39850085B847 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +607,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RBZ2UQ2323;
 				INFOPLIST_FILE = GettyImages/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.magdy.GettyImages;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -529,6 +622,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = RBZ2UQ2323;
 				INFOPLIST_FILE = GettyImages/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.magdy.GettyImages;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -613,6 +707,7 @@
 				79A3F1FD1F1A2BBC0085B847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		79A3F1FE1F1A2BBC0085B847 /* Build configuration list for PBXNativeTarget "GettyImagesTests" */ = {
 			isa = XCConfigurationList;
@@ -621,6 +716,7 @@
 				79A3F2001F1A2BBC0085B847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		79A3F2011F1A2BBC0085B847 /* Build configuration list for PBXNativeTarget "GettyImagesUITests" */ = {
 			isa = XCConfigurationList;
@@ -629,6 +725,7 @@
 				79A3F2031F1A2BBC0085B847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
