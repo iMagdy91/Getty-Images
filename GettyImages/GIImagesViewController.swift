@@ -37,7 +37,12 @@ class GIImagesViewController: GIBaseViewController {
             return imagesArrayValue
         }
     }
-    private  var currentPage        : Int = 1
+    internal var currentPage        : Int = 1 {
+        didSet {
+            print(currentPage)
+            loadDataWithSearchText(searchText: nil)
+        }
+    }
     internal var isSearching        : Bool = false
     
     // MARK: - Outlets
@@ -54,17 +59,17 @@ class GIImagesViewController: GIBaseViewController {
     //MARK:- Private Methods
     private func setupView() {
         tableView.rowHeight = UITableViewAutomaticDimension;
-        tableView.estimatedRowHeight = ImageViewStruct.estimatedRowHeight
+        tableView.estimatedRowHeight = UITableViewConstants.estimatedRowHeight
     }
     
     private func loadDataWithSearchText(searchText: String?) {
         MBProgressHUD.showAdded(to: view, animated: true)
         GIImageStore.getImagesInPage(page: currentPage, searchPhrase: searchText, success: {[weak self] (modelArray) in
-            guard let strongSelf = self else {return}
+            guard let strongSelf = self else { return }
             MBProgressHUD.hide(for: strongSelf.view, animated: true)
             strongSelf.imagesArray = modelArray as? [GIImageViewModel]
         }) {[weak self] (error) in
-            guard let strongSelf = self else {return}
+            guard let strongSelf = self else { return }
             strongSelf.handleError(error: error)
         }
     }

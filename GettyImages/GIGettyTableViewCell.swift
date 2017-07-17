@@ -7,8 +7,30 @@
 //
 
 import UIKit
+import Kingfisher
+
+typealias ImageDownloadCompletion = () -> Void
 
 class GIGettyTableViewCell: UITableViewCell {
+    
+    // MARK: - Outlets
+    
+    @IBOutlet private weak var imageIDLabel     : UILabel!
+    @IBOutlet private weak var gettyImageView   : UIImageView!
+    @IBOutlet private weak var imageTitleLabel  : UILabel!
 
- 
+    // MARK: - Cell Customization
+    func customizeCellWithModel(gettyImage: GIImageViewModel?, completion: @escaping ImageDownloadCompletion) {
+        imageIDLabel.text = gettyImage?.imageID
+        imageTitleLabel.text = gettyImage?.imageTitle
+        
+        if let urlString = gettyImage?.imageURL {
+            let url = URL(string: urlString)
+            gettyImageView.kf.setImage(with: url, placeholder: nil, options: nil, progressBlock: nil, completionHandler: { (image, error, cacheType, url) in
+                if cacheType == .disk {
+                    completion()
+                }
+            })
+        }
+    }
 }

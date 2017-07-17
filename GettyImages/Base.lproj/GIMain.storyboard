@@ -35,13 +35,36 @@
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ner-1G-g2O">
                                                     <rect key="frame" x="8" y="22" width="64" height="64"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qDy-1a-5Tq">
+                                                    <rect key="frame" x="80" y="22" width="287" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lyQ-CW-xQI">
+                                                    <rect key="frame" x="80" y="80.5" width="287" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ner-1G-g2O" firstAttribute="centerY" secondItem="x1k-Pw-cA0" secondAttribute="centerY" id="Cd8-cQ-dzC"/>
+                                                <constraint firstAttribute="trailing" secondItem="qDy-1a-5Tq" secondAttribute="trailing" constant="8" id="J2P-Px-8jS"/>
                                                 <constraint firstItem="ner-1G-g2O" firstAttribute="top" secondItem="x1k-Pw-cA0" secondAttribute="top" constant="22" id="LuY-1l-Vta"/>
+                                                <constraint firstAttribute="bottom" secondItem="lyQ-CW-xQI" secondAttribute="bottom" constant="8" id="NCJ-SM-qWF"/>
                                                 <constraint firstItem="ner-1G-g2O" firstAttribute="leading" secondItem="x1k-Pw-cA0" secondAttribute="leading" constant="8" id="QGe-gi-UOq"/>
+                                                <constraint firstItem="lyQ-CW-xQI" firstAttribute="leading" secondItem="ner-1G-g2O" secondAttribute="trailing" constant="8" id="RSv-Vw-cvb"/>
+                                                <constraint firstAttribute="trailing" secondItem="lyQ-CW-xQI" secondAttribute="trailing" constant="8" id="e7F-33-5u0"/>
+                                                <constraint firstItem="qDy-1a-5Tq" firstAttribute="leading" secondItem="ner-1G-g2O" secondAttribute="trailing" constant="8" id="g8N-2W-4x4"/>
+                                                <constraint firstItem="qDy-1a-5Tq" firstAttribute="top" secondItem="ner-1G-g2O" secondAttribute="top" id="mKk-Xd-pVE"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="gettyImageView" destination="ner-1G-g2O" id="rVn-Jx-Z0a"/>
+                                            <outlet property="imageIDLabel" destination="qDy-1a-5Tq" id="l8I-M3-TZE"/>
+                                            <outlet property="imageTitleLabel" destination="lyQ-CW-xQI" id="IwS-hc-54O"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

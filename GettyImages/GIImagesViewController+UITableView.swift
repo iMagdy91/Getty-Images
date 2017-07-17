@@ -13,6 +13,13 @@ extension GIImagesViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - Cell Construction Methods
     func constructNormalCellForTableView(tableView: UITableView, atIndexPath indexPath: IndexPath) -> GIGettyTableViewCell {
         let cell: GIGettyTableViewCell?  = tableView.dequeueReusableCell(withIdentifier: UITableViewCellIdentifier.gettyCellIdentifier) as? GIGettyTableViewCell
+        cell?.customizeCellWithModel(gettyImage: imagesArray?[indexPath.row], completion: { 
+            DispatchQueue.main.async(execute: { _ in
+                tableView.beginUpdates()
+                tableView.endUpdates()
+            })
+
+        })
         return cell!
     }
     
@@ -27,8 +34,22 @@ extension GIImagesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     // MARK: - UITableViewDelegate Methods
+    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewConstants.estimatedRowHeight
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        
+        if let images = imagesArray {
+            if indexPath.row == images.count - 1 {
+                currentPage += 1
+            }
+        }
+        
+    }
+   
     
 }

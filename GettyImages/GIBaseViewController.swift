@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class GIBaseViewController: UIViewController {
 
     // MARK: - Utils
     func handleError(error: Error) {
+        MBProgressHUD.hide(for: view, animated: true)
         let alertController = UIAlertController.init(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
         alertController.addAction(UIAlertAction.init(title: "OK", style: .cancel, handler: nil))
         present(alertController, animated: true, completion: nil)

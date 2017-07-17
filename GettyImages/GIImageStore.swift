@@ -15,10 +15,12 @@ fileprivate let pageKey         : String = "page"
 fileprivate let pageSizeKey     : String = "page_size"
 fileprivate let phraseKey       : String = "phrase"
 
-// Default values
-fileprivate let defaultPageSize : Int = 10
+
 
 class GIImageStore: GIBaseStore {
+    
+    // Default values
+    static let defaultPageSize : Int = 10
     
     /**
      Get getty images from API.
