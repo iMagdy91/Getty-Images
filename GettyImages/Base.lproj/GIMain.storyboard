@@ -20,9 +20,48 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBx-Ul-9Ux">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Getty Cell" rowHeight="110" id="Ipw-t1-ymO" customClass="GIGettyTableViewCell" customModule="GettyImages" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="110"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ipw-t1-ymO" id="x1k-Pw-cA0">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ner-1G-g2O">
+                                                    <rect key="frame" x="8" y="22" width="64" height="64"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ner-1G-g2O" firstAttribute="centerY" secondItem="x1k-Pw-cA0" secondAttribute="centerY" id="Cd8-cQ-dzC"/>
+                                                <constraint firstItem="ner-1G-g2O" firstAttribute="top" secondItem="x1k-Pw-cA0" secondAttribute="top" constant="22" id="LuY-1l-Vta"/>
+                                                <constraint firstItem="ner-1G-g2O" firstAttribute="leading" secondItem="x1k-Pw-cA0" secondAttribute="leading" constant="8" id="QGe-gi-UOq"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="IlO-I2-K13"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="G3R-tZ-BMw"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="eBx-Ul-9Ux" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="WbR-hg-CCS"/>
+                            <constraint firstAttribute="trailing" secondItem="eBx-Ul-9Ux" secondAttribute="trailing" id="YAI-06-WZh"/>
+                            <constraint firstItem="eBx-Ul-9Ux" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="b6C-Zh-o9O"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eBx-Ul-9Ux" secondAttribute="bottom" id="sJC-S5-kgo"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Getty Images" id="iU8-Ww-srV"/>
+                    <connections>
+                        <outlet property="tableView" destination="eBx-Ul-9Ux" id="KjU-Jv-AO3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -47,4 +86,7 @@
             <point key="canvasLocation" x="174" y="139"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Placeholder" width="64" height="64"/>
+    </resources>
 </document>

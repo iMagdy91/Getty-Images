@@ -31,7 +31,6 @@ class GettyImagesTests: XCTestCase {
             XCTAssertNotNil(images)
             XCTAssert(images?.count == 10)
             XCTAssertNotNil(images?.first?.imageTitle)
-            
             expectations.fulfill()
         }) { (error) in
            
@@ -41,7 +40,7 @@ class GettyImagesTests: XCTestCase {
         
         waitForExpectations(timeout: 10.0) { error in
             if let error = error {
-                XCTFail("waitForExpectationsWithTimeout errored: \(error)")
+                XCTFail("waitForExpectationsTimeout error: \(error)")
             }
         }
 

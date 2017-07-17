@@ -7,24 +7,66 @@
 //
 
 import UIKit
+import MBProgressHUD
 
 class GIImagesViewController: GIBaseViewController {
 
+    // MARK: - Properties
+    private  var imagesArrayValue   : [GIImageViewModel]? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    internal var imagesArray        : [GIImageViewModel]? {
+        set {
+            if newValue == nil {
+                imagesArrayValue = nil
+                return
+            }
+            guard let images = imagesArrayValue else {
+                imagesArrayValue = newValue
+                return
+            }
+            if images.count > 0 {
+                if let value = newValue {
+                    imagesArrayValue! += value
+                }
+            }
+        }
+        get {
+            return imagesArrayValue
+        }
+    }
+    private  var currentPage        : Int = 1
+    internal var isSearching        : Bool = false
+    
+    // MARK: - Outlets
+    @IBOutlet weak var tableView    : UITableView!
     
     // MARK: - View Controller Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupView()
+        loadDataWithSearchText(searchText: nil)
     }
 
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    //MARK:- Private Methods
+    private func setupView() {
+        tableView.rowHeight = UITableViewAutomaticDimension;
+        tableView.estimatedRowHeight = ImageViewStruct.estimatedRowHeight
     }
-    */
-
+    
+    private func loadDataWithSearchText(searchText: String?) {
+        MBProgressHUD.showAdded(to: view, animated: true)
+        GIImageStore.getImagesInPage(page: currentPage, searchPhrase: searchText, success: {[weak self] (modelArray) in
+            guard let strongSelf = self else {return}
+            MBProgressHUD.hide(for: strongSelf.view, animated: true)
+            strongSelf.imagesArray = modelArray as? [GIImageViewModel]
+        }) {[weak self] (error) in
+            guard let strongSelf = self else {return}
+            strongSelf.handleError(error: error)
+        }
+    }
+    
 }
