@@ -26,6 +26,7 @@
 		79A3F2211F1A57F10085B847 /* GIMappingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F2201F1A57F10085B847 /* GIMappingManager.swift */; };
 		79A3F2241F1CD7720085B847 /* GIGettyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F2231F1CD7720085B847 /* GIGettyTableViewCell.swift */; };
 		79A3F2281F1D2C4B0085B847 /* GIImagesViewController+UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F2271F1D2C4B0085B847 /* GIImagesViewController+UITableView.swift */; };
+		79A3F22C1F1D562E0085B847 /* GIImagesViewController+UISearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F22B1F1D562E0085B847 /* GIImagesViewController+UISearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		79A3F2201F1A57F10085B847 /* GIMappingManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIMappingManager.swift; sourceTree = "<group>"; };
 		79A3F2231F1CD7720085B847 /* GIGettyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIGettyTableViewCell.swift; sourceTree = "<group>"; };
 		79A3F2271F1D2C4B0085B847 /* GIImagesViewController+UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GIImagesViewController+UITableView.swift"; sourceTree = "<group>"; };
+		79A3F22B1F1D562E0085B847 /* GIImagesViewController+UISearchBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "GIImagesViewController+UISearchBar.swift"; sourceTree = "<group>"; };
 		8638B210DB19F04114A42098 /* Pods-GettyImages.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GettyImages.release.xcconfig"; path = "Pods/Target Support Files/Pods-GettyImages/Pods-GettyImages.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -257,6 +259,7 @@
 			isa = PBXGroup;
 			children = (
 				79A3F2271F1D2C4B0085B847 /* GIImagesViewController+UITableView.swift */,
+				79A3F22B1F1D562E0085B847 /* GIImagesViewController+UISearchBar.swift */,
 			);
 			name = Extension;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 				79A3F2281F1D2C4B0085B847 /* GIImagesViewController+UITableView.swift in Sources */,
 				79A3F2241F1CD7720085B847 /* GIGettyTableViewCell.swift in Sources */,
 				79A3F20F1F1A40D90085B847 /* GIBaseStore.swift in Sources */,
+				79A3F22C1F1D562E0085B847 /* GIImagesViewController+UISearchBar.swift in Sources */,
 				79A3F20C1F1A39850085B847 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

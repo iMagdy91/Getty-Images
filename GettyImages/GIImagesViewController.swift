@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import MBProgressHUD
 
 class GIImagesViewController: GIBaseViewController {
 
@@ -21,29 +20,40 @@ class GIImagesViewController: GIBaseViewController {
         set {
             if newValue == nil {
                 imagesArrayValue = nil
+                imagesSearchResults = nil
                 return
             }
-            guard let images = imagesArrayValue else {
-                imagesArrayValue = newValue
-                return
+            
+            if searchController.isActive {
+                setCurrentArray(array: &imagesSearchResults, withValue: newValue)
             }
-            if images.count > 0 {
-                if let value = newValue {
-                    imagesArrayValue! += value
-                }
+            else {
+                setCurrentArray(array: &imagesArrayValue, withValue: newValue)
             }
+            
         }
         get {
             return imagesArrayValue
         }
     }
-    internal var currentPage        : Int = 1 {
+    internal var imagesSearchResults: [GIImageViewModel]? {
         didSet {
-            print(currentPage)
-            loadDataWithSearchText(searchText: nil)
+            tableView.reloadData()
         }
     }
-    internal var isSearching        : Bool = false
+    internal var searchController   : UISearchController = UISearchController(searchResultsController: nil)
+    internal var currentPage        : Int = 1 {
+        didSet {
+            loadDataWithSearchText(searchText: searchText)
+        }
+    }
+    internal var searchText         : String? {
+        didSet {
+            imagesArrayValue = nil
+            imagesSearchResults = nil
+            currentPage = 1
+        }
+    }
     
     // MARK: - Outlets
     @IBOutlet weak var tableView    : UITableView!
@@ -60,13 +70,27 @@ class GIImagesViewController: GIBaseViewController {
     private func setupView() {
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.estimatedRowHeight = UITableViewConstants.estimatedRowHeight
+        searchController.searchBar.delegate = self
+        searchController.dimsBackgroundDuringPresentation = false
+        searchController.delegate = self
+        definesPresentationContext = true
+        tableView.tableHeaderView = searchController.searchBar
     }
-    
-    private func loadDataWithSearchText(searchText: String?) {
-        MBProgressHUD.showAdded(to: view, animated: true)
+    private func setCurrentArray(array: inout [GIImageViewModel]?, withValue newValue: [GIImageViewModel]?) {
+        guard let images = array else {
+            array = newValue
+            return
+        }
+        if images.count > 0 {
+            if let value = newValue {
+                array! += value
+            }
+        }
+
+    }
+    internal func loadDataWithSearchText(searchText: String?) {
         GIImageStore.getImagesInPage(page: currentPage, searchPhrase: searchText, success: {[weak self] (modelArray) in
             guard let strongSelf = self else { return }
-            MBProgressHUD.hide(for: strongSelf.view, animated: true)
             strongSelf.imagesArray = modelArray as? [GIImageViewModel]
         }) {[weak self] (error) in
             guard let strongSelf = self else { return }

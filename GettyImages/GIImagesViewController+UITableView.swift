@@ -13,12 +13,12 @@ extension GIImagesViewController: UITableViewDelegate, UITableViewDataSource {
     // MARK: - Cell Construction Methods
     func constructNormalCellForTableView(tableView: UITableView, atIndexPath indexPath: IndexPath) -> GIGettyTableViewCell {
         let cell: GIGettyTableViewCell?  = tableView.dequeueReusableCell(withIdentifier: UITableViewCellIdentifier.gettyCellIdentifier) as? GIGettyTableViewCell
-        cell?.customizeCellWithModel(gettyImage: imagesArray?[indexPath.row], completion: { 
-            DispatchQueue.main.async(execute: { _ in
-                tableView.beginUpdates()
-                tableView.endUpdates()
-            })
-
+        
+        let imageModel = searchController.isActive ? imagesSearchResults?[indexPath.row] : imagesArray?[indexPath.row]
+        
+        cell?.customizeCellWithModel(gettyImage: imageModel, completion: {
+            tableView.beginUpdates()
+            tableView.endUpdates()
         })
         return cell!
     }
@@ -26,6 +26,9 @@ extension GIImagesViewController: UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - UITableViewDataSource Methods
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.isActive {
+            return imagesSearchResults?.count ?? 0
+        }
         return imagesArray?.count ?? 0
     }
     
@@ -43,13 +46,15 @@ extension GIImagesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         
-        if let images = imagesArray {
+        let modelArray = searchController.isActive ? imagesSearchResults : imagesArray
+        
+        if let images = modelArray {
             if indexPath.row == images.count - 1 {
                 currentPage += 1
             }
         }
         
     }
-   
+    
     
 }
