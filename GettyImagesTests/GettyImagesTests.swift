@@ -24,8 +24,8 @@ class GettyImagesTests: XCTestCase {
     func testAPIResponse() {
         
         let expectations: XCTestExpectation = expectation(description: "Testing GettyImages API")
-        
-        GIImageStore.getImagesInPage(page: 1, searchPhrase: nil, success: { (model) in
+        let imageStore  : GIImageStore      = GIImageStore()
+        imageStore.getImagesInPage(page: 1, searchPhrase: nil, success: { (model) in
           
             let images: [GIImageViewModel]? = model as? [GIImageViewModel]
             XCTAssertNotNil(images)
@@ -33,7 +33,6 @@ class GettyImagesTests: XCTestCase {
             XCTAssertNotNil(images?.first?.imageTitle)
             expectations.fulfill()
         }) { (error) in
-           
             XCTFail("##ERROR happened: \(error)")
             expectations.fulfill()
         }

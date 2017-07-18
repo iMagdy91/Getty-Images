@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		31873994E2357C3360CE0F01 /* Pods_GettyImages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44821B875B790E5EC39EF886 /* Pods_GettyImages.framework */; };
+		794B7A111F1E748400710BDE /* GIMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79A3F1DA1F1A2BBC0085B847 /* GIMain.storyboard */; };
 		79A3F1D71F1A2BBC0085B847 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F1D61F1A2BBC0085B847 /* AppDelegate.swift */; };
 		79A3F1DC1F1A2BBC0085B847 /* GIMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79A3F1DA1F1A2BBC0085B847 /* GIMain.storyboard */; };
 		79A3F1DE1F1A2BBC0085B847 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79A3F1DD1F1A2BBC0085B847 /* Assets.xcassets */; };
@@ -411,6 +412,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				794B7A111F1E748400710BDE /* GIMain.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
