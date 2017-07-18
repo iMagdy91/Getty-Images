@@ -21,7 +21,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBx-Ul-9Ux">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="110" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eBx-Ul-9Ux">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -57,7 +57,6 @@
                                                 <constraint firstItem="lyQ-CW-xQI" firstAttribute="leading" secondItem="ner-1G-g2O" secondAttribute="trailing" constant="8" id="RSv-Vw-cvb"/>
                                                 <constraint firstAttribute="trailing" secondItem="lyQ-CW-xQI" secondAttribute="trailing" constant="8" id="e7F-33-5u0"/>
                                                 <constraint firstItem="qDy-1a-5Tq" firstAttribute="leading" secondItem="ner-1G-g2O" secondAttribute="trailing" constant="8" id="g8N-2W-4x4"/>
-                                                <constraint firstItem="lyQ-CW-xQI" firstAttribute="top" secondItem="qDy-1a-5Tq" secondAttribute="bottom" constant="37.5" id="iH0-bC-am7"/>
                                                 <constraint firstItem="qDy-1a-5Tq" firstAttribute="top" secondItem="ner-1G-g2O" secondAttribute="top" id="mKk-Xd-pVE"/>
                                             </constraints>
                                         </tableViewCellContentView>

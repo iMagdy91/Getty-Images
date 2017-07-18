@@ -28,7 +28,7 @@ class GIGettyTableViewCell: UITableViewCell {
             let url = URL(string: urlString)
             gettyImageView.kf.setImage(with: url, placeholder: #imageLiteral(resourceName: "Placeholder"), options: nil, progressBlock: nil, completionHandler: {[weak self] (image, error, cacheType, url) in
                 self?.gettyImageView.sizeToFit()
-                if cacheType == .none {
+                if cacheType == .none || cacheType == .disk {
                     completion()
                 }
             })
