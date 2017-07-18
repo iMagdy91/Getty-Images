@@ -11,6 +11,7 @@ import UIKit
 class GIImagesViewController: GIBaseViewController {
 
     // MARK: - Properties
+    private  let imageStore         : GIImageStore = GIImageStore()
     private  var imagesArrayValue   : [GIImageViewModel]? {
         didSet {
             tableView.reloadData()
@@ -30,7 +31,6 @@ class GIImagesViewController: GIBaseViewController {
             else {
                 setCurrentArray(array: &imagesArrayValue, withValue: newValue)
             }
-            
         }
         get {
             return imagesArrayValue
@@ -49,9 +49,9 @@ class GIImagesViewController: GIBaseViewController {
     }
     internal var searchText         : String? {
         didSet {
-            imagesArrayValue = nil
+            imagesArrayValue    = nil
             imagesSearchResults = nil
-            currentPage = 1
+            currentPage         = 1
         }
     }
     
@@ -76,7 +76,8 @@ class GIImagesViewController: GIBaseViewController {
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
     }
-    private func setCurrentArray(array: inout [GIImageViewModel]?, withValue newValue: [GIImageViewModel]?) {
+    private func setCurrentArray(array: inout [GIImageViewModel]?,
+                                 withValue newValue: [GIImageViewModel]?) {
         guard let images = array else {
             array = newValue
             return
@@ -89,7 +90,7 @@ class GIImagesViewController: GIBaseViewController {
 
     }
     internal func loadDataWithSearchText(searchText: String?) {
-        GIImageStore.getImagesInPage(page: currentPage, searchPhrase: searchText, success: {[weak self] (modelArray) in
+        imageStore.getImagesInPage(page: currentPage, searchPhrase: searchText, success: {[weak self] (modelArray) in
             guard let strongSelf = self else { return }
             strongSelf.imagesArray = modelArray as? [GIImageViewModel]
         }) {[weak self] (error) in

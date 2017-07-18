@@ -11,7 +11,8 @@ import UIKit
 extension GIImagesViewController: UITableViewDelegate, UITableViewDataSource {
     
     // MARK: - Cell Construction Methods
-    func constructNormalCellForTableView(tableView: UITableView, atIndexPath indexPath: IndexPath) -> GIGettyTableViewCell {
+    func constructNormalCellForTableView(tableView: UITableView,
+                                         atIndexPath indexPath: IndexPath) -> GIGettyTableViewCell {
         let cell: GIGettyTableViewCell?  = tableView.dequeueReusableCell(withIdentifier: UITableViewCellIdentifier.gettyCellIdentifier) as? GIGettyTableViewCell
         
         let imageModel = searchController.isActive ? imagesSearchResults?[indexPath.row] : imagesArray?[indexPath.row]
@@ -25,26 +26,32 @@ extension GIImagesViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     // MARK: - UITableViewDataSource Methods
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView,
+                   numberOfRowsInSection section: Int) -> Int {
         if searchController.isActive {
             return imagesSearchResults?.count ?? 0
         }
         return imagesArray?.count ?? 0
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return constructNormalCellForTableView(tableView:tableView,  atIndexPath:indexPath)
+    func tableView(_ tableView: UITableView,
+                   cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return constructNormalCellForTableView(tableView:tableView, atIndexPath:indexPath)
     }
     
     // MARK: - UITableViewDelegate Methods
-    func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView,
+                   estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewConstants.estimatedRowHeight
     }
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    func tableView(_ tableView: UITableView,
+                   heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableViewAutomaticDimension
     }
     
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView,
+                   willDisplay cell: UITableViewCell,
+                   forRowAt indexPath: IndexPath) {
         
         let modelArray = searchController.isActive ? imagesSearchResults : imagesArray
         
@@ -53,7 +60,12 @@ extension GIImagesViewController: UITableViewDelegate, UITableViewDataSource {
                 currentPage += 1
             }
         }
+    }
+    func tableView(_ tableView: UITableView,
+                   didSelectRowAt indexPath: IndexPath) {
         
+        let modelArray = searchController.isActive ? imagesSearchResults : imagesArray
+        showMessageWithModel(model: modelArray?[indexPath.row])
     }
     
     

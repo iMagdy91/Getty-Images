@@ -8,10 +8,15 @@
 
 import Foundation
 
-class GIBaseStore {
+protocol GIBaseStoreProtocol {
     
     typealias ErrorClosure      = (Error) -> Void
     typealias ViewModelClosure  = ([GIBaseViewModel]?) -> Void
 
+    // MARK: - GIBaseStoreProtocol Methods
+    func getImagesInPage(page: Int,
+                               searchPhrase: String?,
+                               success: @escaping ViewModelClosure,
+                               failure: @escaping ErrorClosure)
     
 }

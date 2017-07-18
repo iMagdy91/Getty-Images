@@ -13,7 +13,19 @@ class GIBaseViewController: UIViewController {
 
     // MARK: - Utils
     func handleError(error: Error) {
-        let alertController = UIAlertController.init(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+        showMessage(message: error.localizedDescription)
+    }
+    
+    func showMessageWithModel(model: GIImageViewModel?) {
+        if let imageModel = model {
+            if let caption = imageModel.imageCaption {
+                showMessage(message: caption)
+            }
+        }
+    }
+    
+    private func showMessage(message: String) {
+        let alertController = UIAlertController.init(title: nil, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction.init(title: "OK", style: .cancel, handler: nil))
         present(alertController, animated: true, completion: nil)
     }

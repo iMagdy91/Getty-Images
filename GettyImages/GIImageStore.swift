@@ -17,7 +17,7 @@ fileprivate let phraseKey       : String = "phrase"
 
 
 
-class GIImageStore: GIBaseStore {
+class GIImageStore: GIBaseStoreProtocol {
     
     // Default values
     static let defaultPageSize : Int = 10
@@ -31,14 +31,14 @@ class GIImageStore: GIBaseStore {
      - Parameter failure: response failure block with Error.
      */
     
-    class func getImagesInPage(page: Int,
+     func getImagesInPage(page: Int,
                                searchPhrase: String?,
                                success: @escaping ViewModelClosure,
                                failure: @escaping ErrorClosure) {
         
         let headerDictionary: [String : String] = [apiKey : Network.api_key]
         var parametersDictionary: [String : Any] = [pageKey : page,
-                                                    pageSizeKey: defaultPageSize]
+                                                    pageSizeKey: GIImageStore.defaultPageSize]
         if let searchText = searchPhrase {
             parametersDictionary.updateValue(searchText, forKey: phraseKey)
         }
