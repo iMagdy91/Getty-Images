@@ -29,8 +29,8 @@ class GINetworkManager {
                                       requestMethod: Alamofire.HTTPMethod,
                                       parameters: [String : Any]?,
                                       headers: [String : String]?,
-                                      success:@escaping NetworkSuccessClosure,
-                                      failure:  @escaping NetworkErrorClosure) {
+                                      success: @escaping NetworkSuccessClosure,
+                                      failure: @escaping NetworkErrorClosure) {
         
         let url = (path != nil) ? Network.baseURL + path! : Network.baseURL
         Alamofire.request(url, method: requestMethod, parameters: parameters, headers: headers)

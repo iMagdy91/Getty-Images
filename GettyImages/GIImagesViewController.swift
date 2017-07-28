@@ -17,6 +17,7 @@ class GIImagesViewController: GIBaseViewController {
             tableView.reloadData()
         }
     }
+    
     internal var imagesArray        : [GIImageViewModel]? {
         set {
             if newValue == nil {
@@ -36,17 +37,20 @@ class GIImagesViewController: GIBaseViewController {
             return imagesArrayValue
         }
     }
+    
     internal var imagesSearchResults: [GIImageViewModel]? {
         didSet {
             tableView.reloadData()
         }
     }
+    
     internal var searchController   : UISearchController = UISearchController(searchResultsController: nil)
     internal var currentPage        : Int = 1 {
         didSet {
             loadDataWithSearchText(searchText: searchText)
         }
     }
+    
     internal var searchText         : String? {
         didSet {
             imagesArrayValue    = nil
@@ -76,6 +80,7 @@ class GIImagesViewController: GIBaseViewController {
         definesPresentationContext = true
         tableView.tableHeaderView = searchController.searchBar
     }
+    
     private func setCurrentArray(array: inout [GIImageViewModel]?,
                                  withValue newValue: [GIImageViewModel]?) {
         guard let images = array else {
@@ -89,6 +94,7 @@ class GIImagesViewController: GIBaseViewController {
         }
 
     }
+    
     internal func loadDataWithSearchText(searchText: String?) {
         imageStore.getImagesInPage(page: currentPage, searchPhrase: searchText, success: {[weak self] (modelArray) in
             guard let strongSelf = self else { return }
