@@ -9,28 +9,24 @@
 import Foundation
 import ObjectMapper
 
-// DTO Class to parse content of API into.
-class GIGettyImage: Mappable {
+// DTO Class to parse content of GettyImages API into.
+class GIGettyImage: GIBaseMappable {
     
     // MARK: - Properties
     private(set) var resultCount: Int?
     private(set) var images     : [GIImageModel]?
     
     
-    // MARK: - Init
-    required init?(map: Map) {
-    }
-    
     /** 
      Mapping from API
     */
-    func mapping(map: Map) {
+    override func mapping(map: Map) {
         resultCount <- map["result_count"]
         images      <- map["images"]
     }
 }
 
-class GIImageModel: Mappable {
+class GIImageModel: GIBaseMappable {
     
     // MARK: - Properties
     private(set) var assetFamily    : String?
@@ -44,15 +40,11 @@ class GIImageModel: Mappable {
     private(set) var maxDimention   : GIImageDimention?
     private(set) var title          : String?
     
-    
-    // MARK: - Init
-    required init?(map: Map) {
-    }
-    
+   
     /**
      Mapping from API
      */
-    func mapping(map: Map) {
+    override func mapping(map: Map) {
         assetFamily     <- map["asset_family"]
         caption         <- map["caption"]
         collectionCode  <- map["collection_code"]
@@ -66,41 +58,34 @@ class GIImageModel: Mappable {
     }
 }
 
-class GIImageDisplaySize: Mappable {
+class GIImageDisplaySize: GIBaseMappable {
     
     // MARK: - Properties
     private(set) var isWatedmarked  : Bool?
     private(set) var name           : String?
     private(set) var url            : String?
     
-    // MARK: - Init
-    required init?(map: Map) {
-    }
-    
     /**
      Mapping from API
      */
-    func mapping(map: Map) {
+    override func mapping(map: Map) {
         isWatedmarked  <- map["is_watermarked"]
         name           <- map["name"]
         url            <- map["uri"]
     }
 }
 
-class GIImageDimention: Mappable {
+class GIImageDimention: GIBaseMappable {
     
     // MARK: - Properties
     private(set) var height         : Float?
     private(set) var width          : Float?
     
-    // MARK: - Init
-    required init?(map: Map) {
-    }
     
     /**
      Mapping from API
      */
-    func mapping(map: Map) {
+    override func mapping(map: Map) {
         height          <- map["height"]
         width           <- map["width"]
     }

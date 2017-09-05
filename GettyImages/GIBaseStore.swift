@@ -8,15 +8,22 @@
 
 import Foundation
 
+enum APIType  {
+    case gettyImage
+    case shutterstock
+    
+}
+
 protocol GIBaseStoreProtocol {
     
     typealias ErrorClosure      = (Error) -> Void
     typealias ViewModelClosure  = ([GIBaseViewModel]?) -> Void
 
     // MARK: - GIBaseStoreProtocol Methods
-    func getImagesInPage(page: Int,
-                               searchPhrase: String?,
-                               success: @escaping ViewModelClosure,
-                               failure: @escaping ErrorClosure)
+    func getDataForAPI(_ api: APIType,
+                       page: Int,
+                       searchPhrase: String?,
+                       success: @escaping ViewModelClosure,
+                       failure: @escaping ErrorClosure)
     
 }

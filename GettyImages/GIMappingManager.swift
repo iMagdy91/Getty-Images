@@ -22,9 +22,22 @@ class GIMappingManager {
         
         var imagesViewModel = [GIImageViewModel]()
         
-        if let gettyImageModel = gettyImage, let images = gettyImageModel.images {
+        if let images = gettyImage?.images {
             for image in images {
-                let imageViewModel: GIImageViewModel = GIImageViewModel(imageID: image.imageID, imageTitle: image.title, imageCaption: image.caption, imageURL: image.displaySizes?.first?.url)
+                let imageViewModel = GIImageViewModel(imageID: image.imageID, imageTitle: image.title, imageCaption: image.caption, imageURL: image.displaySizes?.first?.url)
+                imagesViewModel.append(imageViewModel)
+            }
+        }
+        
+        return imagesViewModel
+    }
+    
+    class func mapShutterStockToImageViewModel(shutterStockModel: GIShutterStock?) -> [GIImageViewModel] {
+        var imagesViewModel = [GIImageViewModel]()
+        
+        if let images = shutterStockModel?.data {
+            for image in images {
+                let imageViewModel = GIImageViewModel(imageID: image.id, imageTitle: image.description, imageCaption: nil, imageURL: image.assets?.smallThumb?.url)
                 imagesViewModel.append(imageViewModel)
             }
         }

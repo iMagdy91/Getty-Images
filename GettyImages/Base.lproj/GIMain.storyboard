@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ovi-Eg-WKp">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ovi-Eg-WKp">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -29,7 +28,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="110"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ipw-t1-ymO" id="x1k-Pw-cA0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="110"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="ner-1G-g2O">
@@ -50,6 +49,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ner-1G-g2O" firstAttribute="centerY" secondItem="x1k-Pw-cA0" secondAttribute="centerY" id="Cd8-cQ-dzC"/>
+                                                <constraint firstItem="lyQ-CW-xQI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="qDy-1a-5Tq" secondAttribute="bottom" constant="10" id="H9h-cc-GSF"/>
                                                 <constraint firstAttribute="trailing" secondItem="qDy-1a-5Tq" secondAttribute="trailing" constant="8" id="J2P-Px-8jS"/>
                                                 <constraint firstItem="ner-1G-g2O" firstAttribute="top" secondItem="x1k-Pw-cA0" secondAttribute="top" constant="22" id="LuY-1l-Vta"/>
                                                 <constraint firstAttribute="bottom" secondItem="lyQ-CW-xQI" secondAttribute="bottom" constant="8" id="NCJ-SM-qWF"/>

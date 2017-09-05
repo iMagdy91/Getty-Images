@@ -47,7 +47,7 @@ class GIImagesViewController: GIBaseViewController {
     internal var searchController   : UISearchController = UISearchController(searchResultsController: nil)
     internal var currentPage        : Int = 1 {
         didSet {
-            loadDataWithSearchText(searchText: searchText)
+            loadDataWithSearchText(searchText: nil)
         }
     }
     
@@ -95,14 +95,26 @@ class GIImagesViewController: GIBaseViewController {
 
     }
     
-    internal func loadDataWithSearchText(searchText: String?) {
-        imageStore.getImagesInPage(page: currentPage, searchPhrase: searchText, success: {[weak self] (modelArray) in
+    private func loadDataWithSearchText(searchText: String?) {
+
+        imageStore.getDataForAPI(.gettyImage, page: currentPage, searchPhrase: searchText, success: {[weak self] (modelArray) in
             guard let strongSelf = self else { return }
             strongSelf.imagesArray = modelArray as? [GIImageViewModel]
         }) {[weak self] (error) in
             guard let strongSelf = self else { return }
             strongSelf.handleError(error: error)
         }
+        
+        imageStore.getDataForAPI(.shutterstock, page: currentPage, searchPhrase: searchText, success: {[weak self] (modelArray) in
+            guard let strongSelf = self else { return }
+            strongSelf.imagesArray = modelArray as? [GIImageViewModel]
+
+        }) { [weak self](error) in
+            guard let strongSelf = self else { return }
+            strongSelf.handleError(error: error)
+
+        }
+        
     }
     
 }

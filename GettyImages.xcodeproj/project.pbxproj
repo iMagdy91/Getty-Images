@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		31873994E2357C3360CE0F01 /* Pods_GettyImages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 44821B875B790E5EC39EF886 /* Pods_GettyImages.framework */; };
 		794B7A111F1E748400710BDE /* GIMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79A3F1DA1F1A2BBC0085B847 /* GIMain.storyboard */; };
+		796E7DF81F5E9FCE00BEE63A /* GIShutterStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796E7DF71F5E9FCE00BEE63A /* GIShutterStock.swift */; };
+		796E7DFA1F5EA08000BEE63A /* GIBaseMappable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 796E7DF91F5EA08000BEE63A /* GIBaseMappable.swift */; };
 		79A3F1D71F1A2BBC0085B847 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79A3F1D61F1A2BBC0085B847 /* AppDelegate.swift */; };
 		79A3F1DC1F1A2BBC0085B847 /* GIMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 79A3F1DA1F1A2BBC0085B847 /* GIMain.storyboard */; };
 		79A3F1DE1F1A2BBC0085B847 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 79A3F1DD1F1A2BBC0085B847 /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		44821B875B790E5EC39EF886 /* Pods_GettyImages.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GettyImages.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4D8DDBF1B370637095F2DD7D /* Pods-GettyImages.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GettyImages.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GettyImages/Pods-GettyImages.debug.xcconfig"; sourceTree = "<group>"; };
+		796E7DF71F5E9FCE00BEE63A /* GIShutterStock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIShutterStock.swift; sourceTree = "<group>"; };
+		796E7DF91F5EA08000BEE63A /* GIBaseMappable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GIBaseMappable.swift; sourceTree = "<group>"; };
 		79A3F1D31F1A2BBC0085B847 /* GettyImages.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GettyImages.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		79A3F1D61F1A2BBC0085B847 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79A3F1DB1F1A2BBC0085B847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/GIMain.storyboard; sourceTree = "<group>"; };
@@ -225,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				79A3F2171F1A49D40085B847 /* GIGettyImage.swift */,
+				796E7DF71F5E9FCE00BEE63A /* GIShutterStock.swift */,
+				796E7DF91F5EA08000BEE63A /* GIBaseMappable.swift */,
 			);
 			name = DTO;
 			sourceTree = "<group>";
@@ -482,6 +488,8 @@
 				79A3F1D71F1A2BBC0085B847 /* AppDelegate.swift in Sources */,
 				79A3F2281F1D2C4B0085B847 /* GIImagesViewController+UITableView.swift in Sources */,
 				79A3F2241F1CD7720085B847 /* GIGettyTableViewCell.swift in Sources */,
+				796E7DF81F5E9FCE00BEE63A /* GIShutterStock.swift in Sources */,
+				796E7DFA1F5EA08000BEE63A /* GIBaseMappable.swift in Sources */,
 				79A3F20F1F1A40D90085B847 /* GIBaseStore.swift in Sources */,
 				79A3F22C1F1D562E0085B847 /* GIImagesViewController+UISearchBar.swift in Sources */,
 				79A3F20C1F1A39850085B847 /* Constants.swift in Sources */,

@@ -8,14 +8,7 @@
 
 import Foundation
 import ObjectMapper
-
-// API paramters and headers
-fileprivate let apiKey          : String = "Api-Key"
-fileprivate let pageKey         : String = "page"
-fileprivate let pageSizeKey     : String = "page_size"
-fileprivate let phraseKey       : String = "phrase"
-
-
+import Alamofire
 
 class GIImageStore: GIBaseStoreProtocol {
     
@@ -24,36 +17,71 @@ class GIImageStore: GIBaseStoreProtocol {
     
     /**
      Get getty images from API.
-     
+     - Parameter api: API Type .gettyImage or .shutterstock
      - Parameter page: page number to request.
      - Parameter searchPhrase: search text if found.
      - Parameter success: response success block with GIImageViewModel.
      - Parameter failure: response failure block with Error.
      */
-    
-     func getImagesInPage(page: Int,
-                               searchPhrase: String?,
-                               success: @escaping ViewModelClosure,
-                               failure: @escaping ErrorClosure) {
+    func getDataForAPI(_ api: APIType,
+                       page: Int,
+                       searchPhrase: String?,
+                       success: @escaping ViewModelClosure,
+                       failure: @escaping ErrorClosure) {
+        switch api {
+        case .gettyImage:
+            getGettyImagesInPage(page, searchPhrase: searchPhrase, success: success, failure: failure)
+            break
+        case .shutterstock:
+            getShutterStockImagesInPage(page, searchPhrase: searchPhrase, success: success, failure: failure)
+            break
+        }
         
-        let headerDictionary: [String : String] = [apiKey : Network.api_key]
-        var parametersDictionary: [String : Any] = [pageKey : page,
-                                                    pageSizeKey: GIImageStore.defaultPageSize]
+    }
+    
+    private func getShutterStockImagesInPage(_ page: Int,
+                                             searchPhrase: String?,
+                                             success: @escaping ViewModelClosure,
+                                             failure: @escaping ErrorClosure) {
+        var parametersDictonary: [String : Any] = [ShutterStockHeaders.pageKey : page,
+                                                   ShutterStockHeaders.pageSizeKey : GIImageStore.defaultPageSize]
         if let searchText = searchPhrase {
-            parametersDictionary.updateValue(searchText, forKey: phraseKey)
+            parametersDictonary.updateValue(searchText, forKey: ShutterStockHeaders.phraseKey)
+        }
+        
+        
+       // API Request
+        GINetworkManager.performRequestWithPath(baseURL: Network.shutterStockBaseURL, authentication: AuthenticationTuple(needsAuthentication: true, username: Network.shutterStockAuthenticationID, password: Network.shutterStockAuthenticationSecret) , path: Network.shutterStockPath, requestMethod: .get, parameters: parametersDictonary, headers: nil, success: { (response) in
+            let shutterStockModel: GIShutterStock? = Mapper<GIShutterStock>().map(JSONObject: response)
+            let imageViewModelArray: [GIImageViewModel] = GIMappingManager.mapShutterStockToImageViewModel(shutterStockModel: shutterStockModel)
+            
+            success(imageViewModelArray)
+        }, failure: failure)
+    }
+    
+    private func getGettyImagesInPage(_ page: Int,
+                                      searchPhrase: String?,
+                                      success: @escaping ViewModelClosure,
+                                      failure: @escaping ErrorClosure) {
+        
+        let headerDictionary: [String : String] = [GettyImagesHeaders.apiKey : Network.gettyImagesApikey]
+        var parametersDictionary: [String : Any] = [GettyImagesHeaders.pageKey : page,
+                                                    GettyImagesHeaders.pageSizeKey: GIImageStore.defaultPageSize]
+        if let searchText = searchPhrase {
+            parametersDictionary.updateValue(searchText, forKey: GettyImagesHeaders.phraseKey)
         }
         
         // API Request
-        GINetworkManager.performRequestWithPath(path: Network.path, requestMethod: .get, parameters: parametersDictionary, headers: headerDictionary, success: { (response) in
+        GINetworkManager.performRequestWithPath(path: Network.gettyImagespath, requestMethod: .get, parameters: parametersDictionary, headers: headerDictionary, success: { (response) in
             
             let gettyImage: GIGettyImage? = Mapper<GIGettyImage>().map(JSONObject: response)
             let imageViewModelArray: [GIImageViewModel] = GIMappingManager.mapGettyImageToImageViewModel(gettyImage: gettyImage)
             
             success(imageViewModelArray)
             
-        }) { (error) in
-            failure(error)
-        }
+        }, failure: failure)
     }
+    
+    
     
 }
