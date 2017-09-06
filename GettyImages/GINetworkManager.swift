@@ -18,7 +18,7 @@ class GINetworkManager {
     /**
      Requests data from API and get the response back.
      
-     - Paramter  baseURL: Base URL for the API.. Default value is https://api.gettyimages.com:443/
+     - Parameter baseURL: Base URL for the API.. Default value is https://api.gettyimages.com:443/
      - Parameter path: API path.
      - Parameter requestMethod: request method .GET .POST etc..
      - Parameter parameters: request parameters.
